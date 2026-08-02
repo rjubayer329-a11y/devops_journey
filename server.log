@@ -1,0 +1,5 @@
+[2026-08-02 10:00:01] INFO: Server started successfully.
+[2026-08-02 10:02:15] WARNING: High CPU usage detected.
+[2026-08-02 10:05:00] ERROR: Failed to connect to database!
+[2026-08-02 10:08:22] INFO: User logged in.
+[2026-08-02 10:12:44] ERROR: Disk read timeout on /dev/sda1.
