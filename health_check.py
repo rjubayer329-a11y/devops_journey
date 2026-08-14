@@ -1,3 +1,4 @@
+import socket
 import urllib.request
 import urllib.error
 import time
@@ -21,5 +22,5 @@ for link in endpoints:
             )
     except urllib.error.HTTPError as e:
         print(f"❌ [DOWN] {link} - HTTP Error: {e.code}")
-    except urllib.error.URLError as e:
-        print(f"⚠️ [FAILED] {link} - Connection Error: {e.reason}")
+    except Exception as e:
+        print(f"⚠️ [FAILED] {link} - Connection Error: {e}")
