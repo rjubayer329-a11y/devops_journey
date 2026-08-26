@@ -1,0 +1,4 @@
+{
+    "log_file": "health.log",
+    "minimum_uptime": 80.0
+}

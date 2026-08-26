@@ -7,7 +7,7 @@ class LogAnalyzer:
         self.down_count = 0
         self.failed_count = 0
         self.status_code = {}
-
+            
     def open_file(self, file_name):
         with open(file_name, "r") as file:
             for line in file:
@@ -39,16 +39,17 @@ class LogAnalyzer:
                 "status": "OK",
                 "message": "Uptime is within optimal parameters."
             }
-minimum_uptime_percentage = 80.0
+with open("config.json", "r") as config_file:
+    config = json.load(config_file)
 analyzer = LogAnalyzer()
-analyzer.open_file("health.log")
+analyzer.open_file(config["log_file"])
 summary = {
     "total_checks": analyzer.total_checks,
     "up": analyzer.up_count,
     "down": analyzer.down_count,
     "failed": analyzer.failed_count,
     "uptime_percentage": analyzer.get_uptime_percentage(),
-    "alert": analyzer.get_alert_status(minimum_uptime_percentage),
+    "alert": analyzer.get_alert_status(config["minimum_uptime"]),
     "http_error_breakdown": analyzer.status_code
 }
 print(json.dumps(summary, indent=4))
