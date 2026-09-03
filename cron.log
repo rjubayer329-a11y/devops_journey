@@ -1,0 +1,76 @@
+=== Starting pipeline Fri Aug 28 17:16:01 +08 2026 ===
+⚠️ [FAILED] https://httpbin.org/status/200 - Connection Error: <urlopen error _ssl.c:1063: The handshake operation timed out>
+⚠️ [FAILED] https://httpbin.org/status/500 - Connection Error: <urlopen error _ssl.c:1063: The handshake operation timed out>
+⚠️ [FAILED] https://httpbin.org/delay/1 - Connection Error: <urlopen error [Errno -3] Temporary failure in name resolution>
+{
+    "total_checks": 18,
+    "up": 1,
+    "down": 12,
+    "failed": 5,
+    "uptime_percentage": "5.56%",
+    "alert": {
+        "status": "CRITICAL",
+        "message": "Uptime dropped below 80.0% threshold!"
+    },
+    "http_error_breakdown": {
+        "503": 12
+    }
+}
+=== Pipeline Compleated ===
+=== Starting pipeline Fri Aug 28 17:17:01 +08 2026 ===
+✅ [UP] https://httpbin.org/status/200 - Status: 200 OK - Latency:5170.3ms
+❌ [DOWN] https://httpbin.org/status/500 - HTTP Error: 500
+✅ [UP] https://httpbin.org/delay/1 - Status: 200 OK - Latency:6745.0ms
+{
+    "total_checks": 18,
+    "up": 1,
+    "down": 12,
+    "failed": 5,
+    "uptime_percentage": "5.56%",
+    "alert": {
+        "status": "CRITICAL",
+        "message": "Uptime dropped below 80.0% threshold!"
+    },
+    "http_error_breakdown": {
+        "503": 12
+    }
+}
+=== Pipeline Compleated ===
+=== Starting pipeline Fri Aug 28 17:18:01 +08 2026 ===
+✅ [UP] https://httpbin.org/status/200 - Status: 200 OK - Latency:6193.69ms
+❌ [DOWN] https://httpbin.org/status/500 - HTTP Error: 500
+✅ [UP] https://httpbin.org/delay/1 - Status: 200 OK - Latency:6771.76ms
+{
+    "total_checks": 18,
+    "up": 1,
+    "down": 12,
+    "failed": 5,
+    "uptime_percentage": "5.56%",
+    "alert": {
+        "status": "CRITICAL",
+        "message": "Uptime dropped below 80.0% threshold!"
+    },
+    "http_error_breakdown": {
+        "503": 12
+    }
+}
+=== Pipeline Compleated ===
+=== Starting pipeline Fri Aug 28 17:19:01 +08 2026 ===
+⚠️ [FAILED] https://httpbin.org/status/200 - Connection Error: <urlopen error _ssl.c:1063: The handshake operation timed out>
+❌ [DOWN] https://httpbin.org/status/500 - HTTP Error: 500
+✅ [UP] https://httpbin.org/delay/1 - Status: 200 OK - Latency:6542.97ms
+{
+    "total_checks": 18,
+    "up": 1,
+    "down": 12,
+    "failed": 5,
+    "uptime_percentage": "5.56%",
+    "alert": {
+        "status": "CRITICAL",
+        "message": "Uptime dropped below 80.0% threshold!"
+    },
+    "http_error_breakdown": {
+        "503": 12
+    }
+}
+=== Pipeline Compleated ===

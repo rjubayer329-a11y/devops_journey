@@ -1,5 +1,5 @@
 import json
-import re
+
 class LogAnalyzer:
     def __init__(self):
         self.total_checks = 0
@@ -11,17 +11,25 @@ class LogAnalyzer:
     def open_file(self, file_name):
         with open(file_name, "r") as file:
             for line in file:
-                if "[UP]" in line:
-                    self.up_count += 1
-                elif "[DOWN]" in line:
-                    self.down_count += 1
-                    match = re.search(r"HTTP Error:\s*(\d+)", line)
-                    if match:
-                        code = match.group(1)
-                        self.status_code[code] = self.status_code.get(code, 0) + 1
-                elif "[FAILED]" in line:
-                    self.failed_count += 1
+                line = line.strip()
+                if not line:
+                    continue
+
+                parts = line.split(" - ")
+                if len(parts) < 2:
+                    continue
+
+                status_info = parts[1].split()
+                status_code = status_info[0]
                 self.total_checks += 1
+
+                if status_code == "200":
+                    self.up_count += 1
+                elif status_code == "404":
+                    self.failed_count += 1
+                else:
+                    self.down_count += 1
+                    self.status_code[status_code] = self.status_code.get(status_code, 0) + 1
     def get_uptime_percentage(self):
         if self.total_checks == 0:
             return 0
